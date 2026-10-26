@@ -42,8 +42,7 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
-  .dark {
+   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
@@ -79,8 +78,6 @@
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -90,3 +87,18 @@
     @apply bg-background text-foreground font-body;
   }
 }
+
+
+:root { color-scheme: dark; --font-display: 'Instrument Serif', Georgia, serif; --font-mono: 'Silkscreen', monospace; --font-body: 'Instrument Serif', Georgia, serif; }
+html, body, #root { margin: 0; min-height: 100%; width: 100%; background: #100e0c; }
+body { min-width: 320px; }
+.rancho-shell { background: radial-gradient(ellipse at center, #242019 0%, #100e0c 68%); color: #e7e2d6; }
+.stage-frame { position: relative; width: min(100%, 1050px); aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid rgba(194, 163, 104, .22); background: #08070a; box-shadow: 0 18px 70px rgba(0,0,0,.45); }
+.stage-frame > div:first-child { height: 100%; }
+.grain::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .07; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E"); }
+.scanlines-layer { pointer-events: none; position: absolute; inset: 0; z-index: 25; opacity: .12; background: repeating-linear-gradient(to bottom, transparent 0, transparent 2px, rgba(0,0,0,.6) 3px, rgba(0,0,0,.6) 4px); }
+.slow-fade-in { animation: fade-in .9s ease both; }
+@keyframes fade-in { from { opacity: 0 } to { opacity: 1 } }
+.font-display { font-family: 'Instrument Serif', Georgia, serif; }
+.font-mono { font-family: 'Silkscreen', monospace; }
+@media (max-width: 640px) { .stage-frame { aspect-ratio: 4 / 3; } }
