@@ -1,3 +1,4 @@
+// Figuras humanas del juego: siluetas dibujadas píxel por píxel.
 import { box, pixel, ellipse, poly, withAlpha, glow } from './pixel';
 
 // El Hombre del Alambre: inmóvil, apenas más alto que un poste, envuelto en hilos.
